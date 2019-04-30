@@ -8,6 +8,8 @@ import com.repositoryGym.GymRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -31,6 +33,7 @@ import java.util.Optional;
 @Service
 //@Transactional
 @Slf4j
+@CacheConfig(cacheNames = "Gym")
 public class GymService {
     @Autowired
     private GymRepository gymRepository;
@@ -44,6 +47,7 @@ public class GymService {
      * @date ：Created in 2019.4.27
      * @desc ：查询体育馆信息
      */
+    @Cacheable
     public Gym query(Object queryBy) {
         Gym gym = null;
         try {
