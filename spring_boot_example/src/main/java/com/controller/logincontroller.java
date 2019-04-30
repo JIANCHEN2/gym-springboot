@@ -43,7 +43,6 @@ public class logincontroller {
             mod.addAttribute("msg","账号或者密码有误");
             return "login";
         }
-//        map.put("msg","你妈个逼锐雯");
         return "login";
     }
 }
