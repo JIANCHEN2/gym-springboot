@@ -5,6 +5,8 @@ import com.modelGym.Gym;
 import com.modelGym.Trainer;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -24,6 +26,7 @@ import java.util.Optional;
  */
 @Service
 @Slf4j
+@CacheConfig(cacheNames = "Trainer")
 public class TrainerService {
     @Autowired
     private TrainerRepository trainerRepository;
@@ -35,6 +38,7 @@ public class TrainerService {
      * @date ：Created in 2019.4.27
      * @desc ：查询教练信息
      */
+    @Cacheable
     public List<Trainer> query(Object queryBy) {
         List<Trainer> trainers = null;
         try {

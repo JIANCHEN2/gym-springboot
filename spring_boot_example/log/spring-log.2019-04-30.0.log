@@ -1,0 +1,43 @@
+13:43:37.040 [main] INFO  com.DemoApplication - Starting DemoApplication on DESKTOP-UMNURL0 with PID 1320 (C:\Users\zzj\Desktop\spring_boot_example\target\classes started by zzj in C:\Users\zzj\Desktop\spring_boot_example)
+13:43:37.050 [main] INFO  com.DemoApplication - No active profile set, falling back to default profiles: default
+13:43:38.723 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+13:43:38.773 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 40ms. Found 2 repository interfaces.
+13:43:38.773 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+13:43:38.783 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 10ms. Found 1 repository interfaces.
+13:43:39.303 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$7cd5c714] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+13:43:39.593 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+13:43:39.603 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+13:43:39.613 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+13:43:39.613 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+13:43:39.723 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+13:43:39.723 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2593 ms
+13:43:40.170 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+13:43:40.260 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+13:43:40.270 [main] INFO  com.datasource.GymDataSourceConfig - key:hibernate.hbm2ddl.auto ##### valueupdate
+13:43:40.270 [main] INFO  com.datasource.GymDataSourceConfig - gymmmmmnull
+13:43:40.300 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: GymPersistenceUnit
+	...]
+13:43:40.391 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.9.Final}
+13:43:40.401 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+13:43:40.501 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+13:43:40.621 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+13:43:40.631 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+13:43:40.631 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+13:43:41.459 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'GymPersistenceUnit'
+13:43:41.499 [main] INFO  com.datasource.UserDataSourceConfig - key:hibernate.hbm2ddl.auto ##### valueupdate
+13:43:41.499 [main] INFO  com.datasource.UserDataSourceConfig - userrrrrrrrrrrrrrrnull
+13:43:41.499 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: UserPersistenceUnit
+	...]
+13:43:41.519 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+13:43:41.549 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'UserPersistenceUnit'
+13:43:42.037 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+13:43:42.067 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+13:43:42.347 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 15 endpoint(s) beneath base path '/actuator'
+13:43:42.397 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+13:43:42.434 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+13:43:42.435 [main] INFO  com.DemoApplication - Started DemoApplication in 5.941 seconds (JVM running for 7.275)
+13:43:42.749 [RMI TCP Connection(2)-192.168.183.1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+13:43:42.749 [RMI TCP Connection(2)-192.168.183.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+13:43:42.763 [RMI TCP Connection(2)-192.168.183.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 14 ms

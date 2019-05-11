@@ -1,23 +1,16 @@
 package com.service;
 
 import com.modelGym.Gym;
-
-import com.repositoryGym.GymRepository;
-import com.modelGym.Gym;
 import com.repositoryGym.GymRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.PlatformTransactionManager;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
-
-
 import java.util.List;
 import java.util.Optional;
 
@@ -29,8 +22,8 @@ import java.util.Optional;
  * @version: $
  */
 @Service
-//@Transactional
 @Slf4j
+@CacheConfig(cacheNames = "Gym")
 public class GymService {
     @Autowired
     private GymRepository gymRepository;
@@ -44,6 +37,7 @@ public class GymService {
      * @date ：Created in 2019.4.27
      * @desc ：查询体育馆信息
      */
+    @Cacheable
     public Gym query(Object queryBy) {
         Gym gym = null;
         try {
