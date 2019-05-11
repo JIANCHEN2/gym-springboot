@@ -9,8 +9,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.context.request.WebRequest;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.File;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -27,15 +30,27 @@ public class Searchcontroller {
     @PostMapping("/search")
     public String gogogo(@RequestParam("gym") String gym,
                          @RequestParam("coach") String coach,
-                         Model mod) {
+                         Model mod, WebRequest webRequest, HttpServletResponse response) {
         Object a;
 
 
         List<Trainer> glist = ts.pageQuery(1, 5000);
 
 
-        if (glist == null)
+        if (glist == null){
+//            long lastModified = new File(logincontroller.class.getClassLoader().getResource("templates/search.html").getPath()).lastModified();
+//        System.out.println(lastModified);
+//            if (webRequest.checkNotModified(lastModified)) {
+//            System.out.println("Not Modify");
+//                // 2. shortcut exit - no further processing necessary
+//                return null;
+//            }
+//            // 3. or otherwise further request processing, actually preparing content
+//            response.addHeader("Cache-Control", "max-age=60");
+//            response.addHeader("Last-Modified",String.valueOf(lastModified));
             return "search";
+        }
+
         if (((gym == null || gym.equals("")) && (coach == null || coach.equals(""))))
             mod.addAttribute("hello", glist);
         if (!gym.equals("") && (coach == null || coach.equals(""))) {

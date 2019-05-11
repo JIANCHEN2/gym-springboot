@@ -6,8 +6,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.context.request.WebRequest;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.File;
 import java.util.Map;
 
 @Controller
@@ -16,7 +19,17 @@ public class rigistercontroller {
     UserService us1;
 
     @RequestMapping("/register")
-    public String index() {
+    public String index(WebRequest webRequest, HttpServletResponse response) {
+        long lastModified = new File(logincontroller.class.getClassLoader().getResource("templates/register.html").getPath()).lastModified();
+//        System.out.println(lastModified);
+        if (webRequest.checkNotModified(lastModified)) {
+//            System.out.println("Not Modify");
+            // 2. shortcut exit - no further processing necessary
+            return null;
+        }
+        // 3. or otherwise further request processing, actually preparing content
+        response.addHeader("Cache-Control", "max-age=60");
+        response.addHeader("Last-Modified",String.valueOf(lastModified));
         return "register";
     }
 
