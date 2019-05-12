@@ -22,14 +22,13 @@ import javax.sql.DataSource;
 @Configuration
 public class MyDataSource {
     @Bean
-//    @Primary
     @ConfigurationProperties(prefix = "spring.datasource.user")
     public DataSourceProperties userDataSourceProperties() {
         return new DataSourceProperties();
     }
 
     @Bean(name = "userDataSource")
-    @Qualifier("userDataSource")
+//    @Qualifier("userDataSource")
     @Primary
     public DataSource userDataSource() {
         DataSourceProperties dataSourceProperties = userDataSourceProperties();
@@ -45,11 +44,10 @@ public class MyDataSource {
     }
 
     @Bean(name = "gymDataSource")
-    @Qualifier("gymDataSource")
+//    @Qualifier("gymDataSource")
     public DataSource gymDataSource() {
         DataSourceProperties dataSourceProperties = gymDataSourceProperties();
 
-//        log.info("gymdatasourceeeeeeeeeeeeee"+dataSourceProperties.getUrl());
         return dataSourceProperties.initializeDataSourceBuilder().build();
     }
 

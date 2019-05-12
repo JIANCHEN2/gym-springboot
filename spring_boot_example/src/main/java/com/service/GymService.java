@@ -1,13 +1,9 @@
 package com.service;
 
 import com.modelGym.Gym;
-
-import com.repositoryGym.GymRepository;
-import com.modelGym.Gym;
 import com.repositoryGym.GymRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
@@ -15,11 +11,6 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.PlatformTransactionManager;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
-
-
 import java.util.List;
 import java.util.Optional;
 
@@ -31,7 +22,6 @@ import java.util.Optional;
  * @version: $
  */
 @Service
-//@Transactional
 @Slf4j
 @CacheConfig(cacheNames = "Gym")
 public class GymService {
@@ -110,7 +100,7 @@ public class GymService {
      * @param      ：
      * @return     ：注册状态
      */
-   /* @Transactional(propagation= Propagation.REQUIRED,rollbackForClassName="Exception")*/
+    /* @Transactional(propagation= Propagation.REQUIRED,rollbackForClassName="Exception")*/
    /* public String register(String name, String info) {
         try {
             if(isGymnameCanRegister(name) == false)return "Gym name has been register";

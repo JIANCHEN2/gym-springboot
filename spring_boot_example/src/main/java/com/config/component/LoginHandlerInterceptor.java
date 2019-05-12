@@ -13,7 +13,7 @@ public class LoginHandlerInterceptor implements HandlerInterceptor {
         Object admin = request.getSession().getAttribute("user");
         if (admin == null) {
             System.out.println("当前用户未登录!");
-            response.sendRedirect( "/login");
+            response.sendRedirect( "/");
             return false;
         }
         System.out.println("当前用户已登录，登录的用户名为： " + admin);
