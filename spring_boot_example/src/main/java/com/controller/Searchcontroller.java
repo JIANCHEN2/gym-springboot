@@ -51,40 +51,48 @@ public class Searchcontroller {
             return "search";
         }
 
-        if (((gym == null || gym.equals("")) && (coach == null || coach.equals(""))))
+        if (((gym == null || gym.equals("")) && (coach == null || coach.equals("")))) {
             mod.addAttribute("hello", glist);
+        }
         if (!gym.equals("") && (coach == null || coach.equals(""))) {
             /*System.out.println(ts.toString());*/
             if (isNumeric(gym)){
                 a=Integer.parseInt(gym);
             }
-            else
+            else{
                 a=gym;
+            }
+
                 List<Trainer> trainerOfGym = ts.findTrainerOfGym(gs, a, 1, 5000);
 
-            if (trainerOfGym != null)
+            if (trainerOfGym != null) {
                 mod.addAttribute("hello2", trainerOfGym);
+            }
+
             return "search2";
         }
         if (!gym.equals("") && !coach.equals("")) {
             if (isNumeric(gym)){
                 a=Integer.parseInt(gym);
             }
-            else
+            else{
                 a=gym;
+            }
             List<Trainer> glist4 = ts.findTrainerOfGym(gs, a, 1, 5000);
             LinkedList<Trainer> glist5 = new LinkedList<>();
             if (isNumeric(coach)){
                 a=Integer.parseInt(coach);
             }
-            else
+            else {
                 a=coach;
+            }
             List<Trainer> glist3 = ts.query(a);
             /*mod.addAttribute("hello",glist3);*/
             for (Trainer ts1 : glist3) {
                 for (Trainer gs1 : glist4) {
-                    if ((int) ts1.getId() == (int) gs1.getId())
+                    if ((int) ts1.getId() == (int) gs1.getId()) {
                         glist5.add(ts1);
+                    }
                     break;
                 }
             }
@@ -94,8 +102,9 @@ public class Searchcontroller {
             if (isNumeric(coach)){
                 a=Integer.parseInt(coach);
             }
-            else
+            else {
                 a=coach;
+            }
             List<Trainer> glist3 = ts.query(a);
             mod.addAttribute("hello", glist3);
         }
