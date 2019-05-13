@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @SpringBootApplication(exclude = { DataSourceAutoConfiguration.class,
         DataSourceTransactionManagerAutoConfiguration.class,
         JdbcTemplateAutoConfiguration.class })
-@EntityScan("com.modelGym")
 public class DemoApplication {
     public static void main(String[] args) {
         SpringApplication.run(DemoApplication.class, args);
